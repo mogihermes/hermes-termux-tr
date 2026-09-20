@@ -75,20 +75,18 @@ Her kaynak dağıtımının URL'si, sürümü ve SHA-256 değeri [`manifest/whee
 
 Mevcut Termux kilidi, Python 3.13 altında tam 74 paketi çözer. On paket Android'e özgü wheel gerektirir; kalanları ikili-only doğrulama kurulumu esnasında uyumlu ikili veya evrensel wheel'lerle sağlanır:
 
-| Paket | Sürüm | Arka uç |
-| --- | ---: | --- |
-| cffi | 2.0.0 | setuptools/C |
-| cryptography | 50.0.0 | maturin/Rust+CFFI |
-| jiter | 0.13.0 | maturin/Rust |
-| MarkupSafe | 3.0.3 | setuptools/C |
-| Pillow | 12.3.0 | setuptools/C |
-| psutil | 7.2.2 | setuptools/C + Android yaması |
-| pydantic-core | 2.46.4 | maturin/Rust |
-| PyYAML | 6.0.3 | setuptools/Cython/libyaml |
-| rpds-py | 0.30.0 | maturin/Rust |
-| ruamel.yaml.clib | 0.2.15 | setuptools/Cython |
-
-Her paketin kaynak SHA-256 değeri için kaynak deponun [README tablosuna](https://github.com/adybag14-cyber/termux-hermes#current-native-wheel-set) ve `manifest/wheels.json` dosyasına bakın.
+| Paket | Sürüm | Arka uç | Kilitlenmiş kaynak SHA-256 |
+| --- | ---: | --- | --- |
+| cffi | 2.0.0 | setuptools/C | `44d1b5909021139fe36001ae048dbdde8214afa20200eda0f64c068cac5d5529` |
+| cryptography | 50.0.0 | maturin/Rust+CFFI | `eeac2acb5a20ed25e0ad6d1df9891a520b78b404266b6d11778f25d5d691a6c9` |
+| jiter | 0.13.0 | maturin/Rust | `f2839f9c2c7e2dffc1bc5929a510e14ce0a946be9365fd1219e7ef342dae14f4` |
+| MarkupSafe | 3.0.3 | setuptools/C | `722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698` |
+| Pillow | 12.3.0 | setuptools/C | `3b8182a766685eaa002637e28b4ec8d6b18819a0c71f579bf0dbaa5830297cce` |
+| psutil | 7.2.2 | setuptools/C + Android yaması | `0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372` |
+| pydantic-core | 2.46.4 | maturin/Rust | `62f875393d7f270851f20523dd2e29f082bcc82292d66db2b64ea71f64b6e1c1` |
+| PyYAML | 6.0.3 | setuptools/Cython/libyaml | `d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f` |
+| rpds-py | 0.30.0 | maturin/Rust | `dd8ff7cf90014af0c0f787eea34794ebf6415242ee1d6fa91eaba725cc441e84` |
+| ruamel.yaml.clib | 0.2.15 | setuptools/Cython | `46e4cc8c43ef6a94885f72512094e482114a8a706d3c555a34ed4b0d20200600` |
 
 Önceki 91 paketlik Android emülatör keşif kaydı, tarihsel kanıt olarak `audit/emulator-audit.json` içinde saklanır. Güncel sürüm için yeniden yayımlanmaz. Güncel, tam 74 paketlik çözücü çıktısı `audit/resolved.txt` dosyasındadır; doğrudan gereksinimler ve kilit kısıtları yanında tutulur.
 

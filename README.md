@@ -21,6 +21,8 @@
 
 Resmî Termux sınırlamaları ve alternatif kaynak kurulumu: [Android / Termux belgeleri](https://hermes-agent.nousresearch.com/docs/getting-started/termux).
 
+> **Android'de sıfırdan başlıyorsan:** Termux kurulumu, izinler, resmî Hermes installer'ı ve sorun giderme için [Android Cihaza Hermes Agent Kurulumu — Termux Türkçe Rehberi](https://github.com/mogihermes/android-cihaza-hermes-kurulumu) ile başla. Bu depo paketli/native APT yolu ve geliştirici ayrıntıları içindir.
+
 ## Amaç
 
 Bu proje, telefonların C ve Rust paketlerini cihaz üzerinde derlemesi yerine, Hermes Agent Termux profili için gerekli yerel Python tekerlerini (wheel) derler. Böylece aarch64 Termux üzerinde kurulabilir ikili paketler kullanılır.

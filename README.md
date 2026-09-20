@@ -1,6 +1,25 @@
 # Termux için Hermes Agent — Türkçe Rehber
 
 > Bu depo, **[adybag14-cyber/termux-hermes](https://github.com/adybag14-cyber/termux-hermes)** projesindeki Termux Hermes kurulum/yapılandırma belgesinin Türkçe çevirisidir. Kaynak sürüm: `main`, Hermes `v0.20.6` / `v2026.8.27`. Teknik gerçekler için her zaman kaynak projeyi ve [resmî Hermes belgelerini](https://hermes-agent.nousresearch.com/docs) esas alın.
+>
+> **Son kaynak kontrolü:** 2026-09-21. Kaynak README değişiklikleri her gün denetlenir; anlamlı bir değişiklikte bu çeviri güncellenir. Bu, sürümün Termux APT deposunda yayımlandığı veya her yeni Hermes sürümüyle anında uyumlu olduğu anlamına gelmez.
+
+## Hangi yolu seçmeliyim?
+
+| İhtiyaç | Önerilen yol |
+| --- | --- |
+| Resmî dağıtım, en basit başlangıç | `curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash` |
+| Aşağıdaki paketli, yerel aarch64 kurulum | Topluluk APT deposu + `pkg install hermes-agent` |
+| Hermes kaynak koduna katkı / özel dal | Resmî Termux sayfasındaki manuel kaynak kurulumu |
+
+## Güvenlik ve platform uyarıları
+
+- Bu rehberdeki APT deposu **NousResearch tarafından işletilmez, imzalanmaz, barındırılmaz veya denetlenmez**; `adybag14-cyber` topluluğu tarafından işletilir. Etkinleştirmek, o deponun imzalama anahtarına güvenmeyi gerektirir.
+- `curl | bash` komutları uzaktan alınan betiği çalıştırır. Komutu uygulamadan önce URL ve kaynağı kontrol edin; resmî yol için yalnızca `hermes-agent.nousresearch.com` alan adını kullanın.
+- Android/Termux, Hermes için **best-effort / Tier 2** platformdur. Android arka plandaki Termux işlerini uyutabilir; gateway sürekliliği yönetilen sunucu hizmeti gibi garanti edilmez.
+- Docker tabanlı terminal yalıtımı Termux içinde yoktur. Yerel sesli yazıya döküm (`faster-whisper`) Android wheel'i olmadığı için test edilen yolda desteklenmez. Otomatik browser/Playwright kurulumu atlanır; Android'de browser araçlarını deneysel kabul edin.
+
+Resmî Termux sınırlamaları ve alternatif kaynak kurulumu: [Android / Termux belgeleri](https://hermes-agent.nousresearch.com/docs/getting-started/termux).
 
 ## Amaç
 
@@ -71,7 +90,7 @@ Genel APT deposu, katkıcı tarafından işletilen bir dağıtım/doğrulama yol
 
 Her kaynak dağıtımının URL'si, sürümü ve SHA-256 değeri [`manifest/wheels.json`](https://github.com/adybag14-cyber/termux-hermes/blob/main/manifest/wheels.json) içinde tutulur. Mevcut yayın asla yerinde değiştirilmez; iş akışı, etiketi zaten olan bir yayını reddeder.
 
-## Yerel wheel kümesi
+## Geliştirici ayrıntıları: yerel wheel kümesi
 
 Mevcut Termux kilidi, Python 3.13 altında tam 74 paketi çözer. On paket Android'e özgü wheel gerektirir; kalanları ikili-only doğrulama kurulumu esnasında uyumlu ikili veya evrensel wheel'lerle sağlanır:
 

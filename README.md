@@ -44,9 +44,9 @@ Kurtarma betiği şunları yapar:
 - Çakışan ikinci bir Python kurulumu yerine mevcut resmî Termux Python 3.13'ü kabul eder.
 - `~/.hermes` dizinini korur ve yapılandırmayı taşır.
 - Maliyetli 32K–65K istekleri önlemek için OpenRouter çıktı sınırını 8.192 token yapar.
-- Sonraki güncellemelerin `pkg upgrade` ile yapılacağını doğrular ve gateway'i yeniden başlatır.
+- Sonraki güncellemelerin `pkg upgrade` ile yapılacağını doğrular, kullanıcıların çok satırlı bir kabuk parçası yapıştırmasına gerek kalmadan gateway'i yeniden başlatır.
 
-İndirme önce değiştirilemez GitHub yayın varlığını, ardından Oracle APT kaynağını dener. Yerel kurulum öncesinde sabitlenmiş SHA-256 sağlama toplamını doğrular. `pkg install` yarıda kalmışsa kalan indirme `~/.cache/hermes-recovery/` altında tutulur; aynı komutu yeniden çalıştırmak indirmeye kaldığı yerden devam eder. Başarılı kurulum bu önbelleği kaldırır.
+İndirme önce değiştirilemez GitHub yayın varlığını, ardından Oracle APT kaynağını dener. Yerel APT kurulumu öncesinde sabitlenmiş paket SHA-256 sağlama toplamını doğrular. Başarısız bir `pkg install` işleminin bıraktığı baytlar dahil, mevcut bir kısmi APT indirmesini de kurtarır. Yarım kalmış bir aktarım `~/.cache/hermes-recovery/` altında tutulur; aynı tek satırlık komutu yeniden çalıştırmak 63.9 MB indirmeyi yeniden başlatmak yerine mevcut baytlardan devam eder. Başarılı kurulum bu önbellek dosyasını kaldırır.
 
 Farklı bir pozitif çıktı sınırı için komuttan önce `HERMES_RECOVERY_MAX_TOKENS` ortam değişkenini ayarlayın.
 
